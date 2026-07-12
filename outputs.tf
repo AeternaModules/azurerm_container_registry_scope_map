@@ -1,3 +1,7 @@
+output "container_registry_scope_maps_id" {
+  description = "Map of id values across all container_registry_scope_maps, keyed the same as var.container_registry_scope_maps"
+  value       = { for k, v in azurerm_container_registry_scope_map.container_registry_scope_maps : k => v.id }
+}
 output "container_registry_scope_maps_actions" {
   description = "Map of actions values across all container_registry_scope_maps, keyed the same as var.container_registry_scope_maps"
   value       = { for k, v in azurerm_container_registry_scope_map.container_registry_scope_maps : k => v.actions }
